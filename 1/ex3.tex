@@ -1,3 +1,51 @@
 % !TeX root = root.tex
 % !TeX spellcheck = en_US
 \section{Conjugation in the Symmetric Group}
+
+\subsection{Two elements of $S_n$ are conjugate iff they have the same cycle type}
+First we show that for a cycle $\sigma = (a_0, \dots, a_{r-1}) \in S_n$ with $r < n$ and an arbitrary $\tau \in S_n$ it holds that $\tau \sigma \tau^{-1} = (\tau(a_0), \dots, \tau(a_{r-1}))$ $(\ast)$.
+
+Let $a \in \{1, \dots, n\}$.\\
+If $\tau^{-1}(a) \notin \{a_0, \dots, a_{r-1}\}$, then 
+\[ \tau \sigma \tau^{-1}(a) = \tau(\sigma (\tau^{-1}(a))) = \tau(\tau^{-1}(a)) = a = (\tau(a_0), \dots, \tau(a_{r-1}))(a) \] 
+as $a \notin \{\tau(a_0), \dots, \tau(a_{r-1})\}$.\\
+If $\tau^{-1}(a) = a_i$ for $i \in \{0, \dots, r-1\}$, then
+\[ \tau \sigma \tau^{-1}(a) = \tau \sigma(\tau^{-1}(a)) = \tau(\sigma(a_i)) = \tau(a_{(i+1) \operatorname{mod} r}) = (\tau(a_0), \dots, \tau(a_{r-1}))(a). \]
+
+Now, let $\pi = (a_1^{(1)}, \dots, a_{m_1}^{(1)}) \dots (a_1^{(s)}, \dots, a_{m_s}^{(s)}) \in S_n$ and $\sigma \in S_n$ be arbitrary permutations. Then
+\begin{equation} \tag{$\ast \ast$}
+\begin{split}
+\sigma \pi \sigma^{-1} & = \sigma (a_1^{(1)}, \dots, a_{m_1}^{(1)}) \sigma^{-1} \dots \sigma (a_1^{(s)}, \dots, a_{m_s}^{(s)}) \sigma^{-1} \\
+& \stackrel{(\ast)}{=} (\sigma(a_1^{(1)}), \dots, \sigma(a_{m_1}^{(1)})) \dots (\sigma(a_1^{(s)}), \dots, \sigma(a_{m_s}^{(s)})).
+\end{split}
+\end{equation}
+
+Finally, we show that two permutations $\pi_1, \pi_2 \in S_n$ are conjugate iff they have the same cycle type.
+
+``$\Rightarrow$'': As $\pi_1$ and $\pi_2$ are conjugate, there exists $\sigma \in S_n$ s.t. $\sigma \pi_1 \sigma^{-1} = \pi_2$. Let $\pi_1 =  (a_1^{(1)}, \dots, a_{m_1}^{(1)}) \dots (a_1^{(s)}, \dots, a_{m_s}^{(s)})$ be a product of disjoint cycles. Then
+\[ \pi_2 = \sigma \pi_1 \sigma^{-1} \stackrel{(\ast \ast)}{=} (\sigma(a_1^{(1)}), \dots, \sigma(a_{m_1}^{(1)})) \dots (\sigma(a_1^{(s)}), \dots, \sigma(a_{m_s}^{(s)})) \]
+is a product of disjoint cycles as $\sigma$ is bijective.
+
+``$\Leftarrow$'': Let $\pi_1 =  (a_1^{(1)}, \dots, a_{m_1}^{(1)}) \dots (a_1^{(s)}, \dots, a_{m_s}^{(s)})$ and $\pi_2 =  (b_1^{(1)}, \dots, b_{m_1}^{(1)}) \dots (b_1^{(s)}, \dots, b_{m_s}^{(s)})$ be products of disjoint cycles. We set $\sigma \in S_n$ s.t. 
+\[ \sigma(a_j^{i}) = b_j^{i} \text{ for } (i,j) \in \{(1,1), \dots, (1,m_1), \dots, (s,1), \dots, (s,m_s)\}. \] 
+The mapping $\sigma$ is well-defined and bijective as the cycles are disjoint and the cycle types are equal. Then it holds that $\sigma \pi_1 \sigma^{-1} \stackrel{(\ast \ast)}{=} \pi_2$.
+
+
+\subsection{Conjugacy classes of $S_5$ and $A_5$}
+The conjugacy classes of $S_5$ can be determined with the cycle types:
+
+
+\begin{tabular}{|r|l|}
+  \hline
+  conjugacy class & cycle type \\\hline
+  $()^{S_n}$ & $(1,1,1,1,1)$ \\
+  $(1,2)^{S_n}$ & $(2,1,1,1)$ \\
+  $(1,2,3)^{S_n}$ & $(3,1,1)$ \\
+  $(1,2,3,4)^{S_n}$ & $(4,1)$ \\
+  $(1,2,3,4,5)^{S_n}$ & $(5)$ \\
+  $((1,2)(3,4))^{S_n}$ & $(2,2,1)$ \\
+  $((1,2,3)(4,5))^{S_n}$ & $(3,2)$ \\\hline
+\end{tabular}
+
+
+The conjugacy classes of $A_5$ are $()^{S_n}, (1,2,3)^{S_n}, (1,2,3,4,5)^{S_n}, (1,3,5,2,4)^{S_n}$ and $((1,2)(3,4))^{S_n}$.
