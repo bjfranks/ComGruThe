@@ -3,12 +3,12 @@
 \section{Subgroups of minimal index}
 Assumptions $H \leq G$, $[G:H]=p$, $G$ finite, $p$ is smallest prime divider of $|G|$, $|G|=p|H|$
 
-Consider the set of left cosets of $H$, we will call this set $\hat{H}$. Now consider how an element of $g\in G$ acts on $\hat{H}$. $g(g'H)=(gg')H$, $g(g''H)=(gg'')H$, if $(gg')H=(gg'')H$ then $\forall h \in H \exists h' \in H : gg'h=gg''h' \rightarrow gg'=gg''h'h^{-1}$ and $gg' \in (gg'')H$ and thus $g' \in g''H$ and $g'H=g''H$. 
+Consider the set of left cosets of $H$. Now consider how an element of $g\in G$ acts on $G/H$. $g(g'H)=(gg')H$, $g(g''H)=(gg'')H$, if $(gg')H=(gg'')H$ then $\forall h \in H \exists h' \in H : gg'h=gg''h' \rightarrow gg'=gg''h'h^{-1}$ and $gg' \in (gg'')H$ and thus $g' \in g''H$ and $g'H=g''H$. 
 
-From this we can follow that the map $\varphi : G \rightarrow perm(\hat{H}), g \mapsto g\hat{H}$ is a homomorphism.
+From this we can follow that the map $\varphi : G \rightarrow Sym(G/H), g \mapsto (G/H \rightarrow G/H, g'H \mapsto (gg')H)$ is a homomorphism.
 
 $ker(\varphi) \subseteq H$, since every $g \in G/H$ cannot map $H$ to $H$, otherwise $g \in H$, because of $1$. 
 
-From the homomorphism $\varphi$ we get an isomorphism $\hat{\varphi}: G/ker(\varphi) \rightarrow img(\varphi)$. $perm(\hat{H})$ is isomorphic to $S_p$, and thus $|img(\varphi)|=|G/ker(\varphi)|$ divides $p!$. Also $[G:ker(varphi)]$ divides $|G|$, from this we follow $[G:ker(\varphi)]=p$, because $p$ is the smallest prime dividing $|G|$. 
+From the homomorphism $\varphi$ we get an isomorphism $\hat{\varphi}: G/ker(\varphi) \rightarrow img(\varphi)$. $Sym(G/H)$ is isomorphic to $S_p$, and thus $|img(\varphi)|=|G/ker(\varphi)|$ divides $p!$. Also $[G:ker(varphi)]$ divides $|G|$, from this we follow $[G:ker(\varphi)]\in \{1,p\}$, because $p$ is the smallest prime dividing $|G|$. However $|ker(varphi)| \leq |H|$ thus $[G:ker(\varphi)]=p$
 
 However now $[G:ker(\varphi)]=p=[G:H]$ from this we get $|G|=p|H|=p|ker(\varphi)|$, so $|H|=|ker(\varphi)|$ and since $ker(\varphi) \subseteq H$, $ker(\varphi)=H$, thus $H$ is the kernel of a homomorphism and is normal. 
