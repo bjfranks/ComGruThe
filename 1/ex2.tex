@@ -2,13 +2,13 @@
 % !TeX spellcheck = en_US
 \section{Abelian Groups}
 
-\subsection{Every cyclic group is abelian}
+\subsection*{a) Every cyclic group is abelian}
 Let $G = \langle g \rangle$ be a cyclic group and let $g_1, g_2 \in G$ be two elements.
 Then $g_1 = g^n$ and $g_2 = g^m$ for some $n, m \in \mathds{N}_0$ and we have
 \[ g_1 g_2 = g^n g^m = g^{n+m} = g^{m+n} = g^m g^n = g_2 g_1. \]
 
 
-\subsection{If $G$ is a group and $G/Z(G)$ is cyclic, then $G$ is abelian}
+\subsection*{b) If $G$ is a group and $G/Z(G)$ is cyclic, then $G$ is abelian}
 Let $G$ be a group s.t. $G/Z(G)$ is cyclic. Then there exists $g Z(G) \in G/Z(G)$ s.t. $G/Z(G) = \langle g Z(G) \rangle$.
 
 Let $g_1, g_2 \in G$. Then $g_1 = g^{n_1} z_1$ and $g_2 = g^{n_2} z_2$ for some $n_1, n_2 \in \mathds{N}_0$ and $z_1, z_2 \in Z(G)$ since any element of $G$ is contained in a coset in $G/Z(G)$. Thus, we have
@@ -16,7 +16,7 @@ Let $g_1, g_2 \in G$. Then $g_1 = g^{n_1} z_1$ and $g_2 = g^{n_2} z_2$ for some 
 The equations hold as $z_1$ and $z_2$ are in the center and therefore commute with every element in $G$.
 
 
-\subsection{A group in which every non-trivial element has order 2 is abelian}
+\subsection*{c) A group in which every non-trivial element has order 2 is abelian}
 Let $G$ be a group s.t. for all $g \in G \setminus \{e\}$ we have $\operatorname{ord}(g) = |\langle g \rangle| = 2$. Then for all $g \in G$ it holds that $g = g^{-1}$.
 
 Let $g_1, g_2 \in G$. Then we have
@@ -24,8 +24,8 @@ Let $g_1, g_2 \in G$. Then we have
 as $g_2 g_1$ is again in $G$.
 
 
-\subsection{Not every 2-group is abelian}
+\subsection*{d) Not every 2-group is abelian}
 We give an example of a 2-group that is not abelian.
 
-Consider the dihedral group $D_4$. As we have seen in the lecture, it holds that $|D_4| = 8 = 2^3$. Thus, $D_4$ is a 2-group. To show that $D_4$ is not abelian, we number the edges of a square against the clock from 1 to 4. Then every isometry is given by a permutation of the edges which we write in cycle notation. Then we have
+Consider the dihedral group $D_4$. As we have seen in the lecture, it holds that $|D_4| = 8 = 2^3$. Thus, $D_4$ is a 2-group. To show that $D_4$ is not abelian, we number the edges of a square counterclockwise from 1 to 4. Then every isometry is given by a permutation of the edges which we write in cycle notation. Then we have
 \[ (1,2,3,4) (2,4) = (1,4) (2,3) \neq (1,2) (3,4) = (2,4) (1,2,3,4). \]
