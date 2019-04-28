@@ -1,14 +1,14 @@
 % !TeX root = root.tex
 % !TeX spellcheck = en_US
 \section{Subgroups of minimal index}
-Assumptions $G \leq H$, $|H|=p$, $G$ finite, $p$ is smallest prime divider of $|G|$
+Assumptions $H \leq G$, $[G:H]=p$, $G$ finite, $p$ is smallest prime divider of $|G|$, $|G|=p|H|$
 
-Since $|H|=p$ and $H$ is a group and every subgroup of $H$ would divide $|H|=p$, obviously $H$ must be cyclic, otherwise there would be one element $k$ for which $<k>$ is less than $|H|$ and divides $|H|$, which is contradictory.
+Consider the set of left cosets of $H$, we will call this set $\hat{H}$. Now consider how an element of $g\in G$ acts on $\hat{H}$. $g(g'H)=(gg')H$, $g(g''H)=(gg'')H$, if $(gg')H=(gg'')H$ then $\forall h \in H \exists h' \in H : gg'h=gg''h' \rightarrow gg'=gg''h'h^{-1}$ and $gg' \in (gg'')H$. 
 
-Since $H$ is cyclic $H$ is abelian.
+From this we can follow that the map $\varphi : G \rightarrow perm(\hat{H}), g \mapsto g\hat{H}$ is a homomorphism.
 
-We show $(gh)^{-1}=h'g^{-1}$ for $h,h' \in H$ and $h^{-1}=h'$
+$ker(\varphi) \subseteq H$, since every $g \in G/H$ cannot map $H$ to $H$, otherwise $g \in H$, because of $1$. 
 
-Proof: $gg^{-1}=e=gc^{p}g^{-1}=gc^{i}c^{p-i}g^{-1} \rightarrow (gc^i)^{-1}=c^{p-i}g^{-1}$. Since each element in $H$ has an equivalent form as $c^i$ for some $i$ the statement follows.
+From the homomorphism $\varphi$ we get an isomorphism $\hat{\varphi}: G/ker(\varphi) \rightarrow img(\varphi)$. $perm(\hat{H})$ is isomorphic to $S_p$, and thus $|img(\varphi)|=|G/ker(\varphi)|$ divides $p!$. Also $[G:ker(varphi)]$ divides $|G|$, from this we follow $[G:ker(\varphi)]=p$, because $p$ is the smallest prime dividing $|G|$. 
 
-From this we get $ghg^{-1} = h'g^{-1}g^{-1} \in Hg^{-1}g^{-1}$ thus $gHg^{-1}=Hg^{-1}g^{-1}$. Since $e$ is in $Hg^{-1}g^{-1}$ it follows that $gg \in H$ and $g^{-1}g^{-1} \in H$, however $g^{-1}g^{-1} \in Hg^{-1}g^{-1}=gHg^{-1}$. Since cosets must be distinct or equal, $gHg^{-1}=H$
+However now $[G:ker(\varphi)]=p=[G:H]$ from this we get $|G|=p|H|=p|ker(\varphi)|$, so $|H|=|ker(\varphi)|$ and since $ker(\varphi) \subseteq H$, $ker(\varphi)=H$, thus $H$ is the kernel of a homomorphism and is normal. 
