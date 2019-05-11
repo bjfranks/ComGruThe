@@ -1,0 +1,58 @@
+% !TeX root = root.tex
+% !TeX spellcheck = en_US
+\section{Group sudoku}
+
+\subsection*{a) Fill out the tables so they yield non-isomorphic groups. Argue that your groups are non-isomorphic.}
+
+\begin{tabular}{|c|c|c|c|c|c|c|c|}\hline
+e & z & a & b & c & d & f & g \\\hline
+z & e & c & f & a & g & b & d \\\hline
+a & d & f & c & z & b & g & c \\\hline
+b & f & d & e & g & a & z & c \\\hline
+c & g & b & a & e & f & d & z \\\hline
+d & a & z & g & f & e & c & b \\\hline
+f & b & g & z & d & c & e & a \\\hline
+g & c & e & d & b & z & a & f \\\hline
+\end{tabular}
+
+This is effectively $D_4$, with $e=id,z=(13),a=(1234),b=(24),c=(14)(23),d=(12)(34),f=(13)(24),g=(1432)$
+
+\begin{tabular}{|c|c|c|c|c|c|c|c|}\hline
+e & z & a & b & c & d & f & g \\\hline
+z & e & f & g & d & c & a & b \\\hline
+a & f & z & c & g & b & e & d \\\hline
+b & g & d & z & a & f & c & e \\\hline
+c & d & b & f & z & e & g & a \\\hline
+d & c & g & a & e & z & b & f \\\hline
+f & a & e & d & b & g & z & c \\\hline
+g & b & c & e & f & a & d & z \\\hline
+\end{tabular}
+
+This is effectively $Dic_2$, with $e=e,z=a^2,a=a,b=b,c=ab,d=a^3b,f=a^3,g=a^2b$
+
+These groups are clearly not isomorphic, because in $D_4$ almost every element is its inverse, wheras in $Dic_2$ only $z$ is its own inverse. This yields the two groups have different subgroup orders and cannot be isomorphic.
+
+\newpage
+\subsection*{b) Show that there are groups $G$ and $H$ such that $Z(G) \cong Z(H)$ and $G/Z(G) \cong H/Z(H)$ but $G$ and $H$ are non-isomorphic}
+
+$Z(D_4)=\{e,f\}$, $Z(Dic_2)=\{e,z\}$. They are clearly isomorphic.
+
+$D_4/Z(D_4)$, where $e=\{e,f\}, a = \{a,g\}, b=\{b,z\}, c= \{c,d\}$ looks like this:
+
+\begin{tabular}{|c|c|c|c|}\hline
+e & a & b & c \\\hline
+a & e & c & b \\\hline
+b & c & e & a \\\hline
+c & b & a & e \\\hline
+\end{tabular}
+
+$Dic_2/Z(Dic_2)$, where $e=\{e,z\}, a = \{a,f\}, b=\{b,g\}, c= \{c,d\}$ looks like this:
+
+\begin{tabular}{|c|c|c|c|}\hline
+e & a & b & c \\\hline
+a & e & c & b \\\hline
+b & c & e & a \\\hline
+c & b & a & e \\\hline
+\end{tabular}
+
+clearly they are isomorphic, this together with a) proves the claim.
