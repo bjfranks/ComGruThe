@@ -5,4 +5,4 @@ To check whether two groups given as Lists $L1$ and $L2$ are isomorphic, we firs
 
 \lstinputlisting[language=gap]{ex3.g}
 
-The function \textit{SearchGen1} runs in $O(n^{\log(n)} n^3) = O(n^{\log(n)+3})$ time since there are $n^{\log(n)}$ combinations and for each of them we call \textit{IsGenSet} that runs in $O(n^3)$. For \textit{SearchGen2} we can use the same complexity bound as \textit{IsIso} also runs in $O(n^3)$ time. Thus, the overall running time is in $n^{O(\log(n))}$.
+The function \textit{SearchGen1} runs in $O(n^{\log(n)} n^3) = O(n^{\log(n)+3})$ time since there are $n^{\log(n)}$ combinations and for each of them we call \textit{IsGenSet} that runs in $O(n^3)$. For \textit{SearchGen2} we can use the same complexity bound since \textit{IsIso} also runs in $O(n^3)$ time. Thus, the overall running time is in $n^{O(\log(n))}$.
