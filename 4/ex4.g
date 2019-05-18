@@ -20,9 +20,11 @@ tetraReduced:=Group(
 # the bottom rotation
 (5,23,14)(6,24,15)(7,25,16)(8,26,17)(9,27,18)(28,32,36)(29,31,34)
 (30,35,33),
-# a side rotation, needed because this object is assumed fixed in 
+# side rotations, needed because this object is assumed fixed in 
 # one point
-(4,25,30)(8,24,31)(7,20,35));
+(4,25,30)(8,24,31)(7,20,35),
+(2,30,16)(6,29,17)(7,33,13),
+(11,25,33)(15,26,34)(16,22,35));
 
 # The group of the tetra assuming we are allowed to swap stickers in 
 # such a way, that the object is allways solved
