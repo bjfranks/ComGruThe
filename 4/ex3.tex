@@ -1,0 +1,8 @@
+% !TeX root = root.tex
+% !TeX spellcheck = en_US
+\section{GAP-exercise}
+To check whether two groups given as Lists $L1$ and $L2$ are isomorphic, we first compare the orders of the groups and if they differ, they cannot be isomorphic. In case that the orders are equal, let $n$ be this order. Then we search for a generating set $S1$ of $L1$ of size $s = \lfloor \log(n) \rfloor$. Such a generating set exists by exercise 7. The function \textit{SearchGen1} tries every combination of $s$ elements of $L1$ and checks with the function \textit{IsGenSet} of exercise 13 if the elements generate $L1$. Then we call \textit{SearchGen2} to find a generating set $S2$ of $L2$ of size $s$ such that mapping the i-th element of $S1$ to the i-th element of $S2$ extends to an isomorphism. To check this, we use the function $IsIso$ of exercise 14. If we find such a $S2$, we return \textit{true}. Otherwise, an isomorphism from $L1$ to $L2$ cannot exist and we return \textit{false}.
+
+\lstinputlisting[language=gap]{ex3.g}
+
+The function \textit{SearchGen1} runs in $O(n^{\log(n)} n^3) = O(n^{\log(n)+3})$ time since there are $n^{\log(n)}$ combinations and for each of them we call \textit{IsGenSet} that runs in $O(n^3)$. For \textit{SearchGen2} we can use the same complexity bound as \textit{IsIso} also runs in $O(n^3)$ time. Thus, the overall running time is in $n^{O(\log(n))}$.
