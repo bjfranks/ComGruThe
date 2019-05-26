@@ -1,3 +1,17 @@
 % !TeX root = root.tex
 % !TeX spellcheck = en_US
 \section{Acting primitively}
+\subsection*{a)}
+Let $\varphi : G \rightarrow \text{Sym}(\Omega)$ be a faithful primitive action. Since $\varphi$ is primitive, we have that the natural action of $\text{Im}(\varphi) \leq \text{Sym}(\Omega)$ on $\Omega$ is primitive.
+
+As $\varphi$ is faithful, it holds that $\text{ker}(\varphi) = \{e\}$ and therefore $\varphi$ is injective. Thus, the mapping $\psi : G \rightarrow \text{Im}(\varphi), g \mapsto \varphi(g)$ is an isomorphism. This means that if $G \leq \text{Sym}(\Omega^\prime)$ is a permutation group, then the natural action of $G$ on $\Omega^\prime$ is primitive.
+
+Hence, if the natural action of a permutation group is not primitive, we can follow that the group has no faithful primitive action at all. For example the natural action of the group $G = \langle (1,2),(3,4) \rangle \leq \text{Sym}(\{1,\dots,4\})$ is not transitive which implies that $G$ has no faithful primitive action.
+
+\subsection*{b)}
+Let $G$ be a finite group with $|G| = n$. Consider the regular action $\varphi : G \rightarrow \text{Sym}(G), g \mapsto (G \rightarrow G, h \mapsto g h)$. Clearly, $\varphi$ is transitive. We have that for all $h \in G$ the stabilizer $G_h = \{e\}$ since the neutral element is unique.
+By theorem 3.7.14 we have that a transitive action is primitive if and only if the stabilizer of every element is a maximal subgroup. Thus, $\{e\}$ is a maximal subgroup of $G$. By the first Sylow Theorem, this implies that $n$ has to be a prime number.
+
+Conversely, if $n$ is a prime number, then $G$ has no proper subgroup except $\{e\}$. Hence, for every $\alpha \in \Omega$ the stabilizer $G_\alpha$ is equal to $\{e\}$ and therefore maximal since by transitivity we have that $G_\alpha \neq G$. By 3.7.14 it follows that every transitive faithful action is primitive.
+
+Thus, for a finite group every transitive faithful action is primitive if and only if the group order is a prime number.

@@ -1,3 +1,18 @@
 % !TeX root = root.tex
 % !TeX spellcheck = en_US
 \section{Orbital graphs}
+\subsection*{a)}
+We show that for all $\alpha, \beta \in \Omega$ and $g \in G$ we have that $\alpha \sim \beta$ implies $\alpha^g \sim \beta^g$.
+
+Given an undirected path between $\alpha$ and $\beta$ we get an undirected path between $\alpha^g$ and $\beta^g$ by replacing every edge $(a,b)$ on the path by $(a^g,b^g)$. As $\Delta$ is an orbital, the edges $(a^g,b^g) = (a,b)^g$ are contained in $\mathcal{G}(\Delta)$.
+
+\subsection*{b)}
+``$\Rightarrow$'': We show that if there exists an orbital $\Delta$ such that $\mathcal{G}(\Delta)$ is not weakly connected, then the action of $G$ on $\Omega$ is not primitive.
+
+Let $\Delta$ be an orbital such that $\mathcal{G}(\Delta)$ is not weakly connected. First we show that every connected component $C \subseteq \Omega$ in $\mathcal{G}(\Delta)$ builds a block. Suppose there exist $\alpha, \beta \in C$ and $g \in G$ such that $\alpha^g \in C$ and $\beta^g \notin C$. As $C$ is connected, there exists a path between $\alpha$ and $\beta$ in $\mathcal{G}(\Delta)$. By a) it follows that there exists a path between $\alpha^g$ and $\beta^g$. Thus, $\beta^g \in C$ since $\alpha^g \in C$, which is a contradiction.
+
+As $\mathcal{G}(\Delta)$ is not weakly connected, there exists a proper connected component $C \subsetneq \Omega$ of $\mathcal{G}(\Delta)$ with $|C| > 1$. Hence, $C$ is a non-trivial block of the action of $G$ on $\Omega$ and therefore the action is not primitive.
+
+``$\Leftarrow$'': Now we show that if $\mathcal{G}(\Delta)$ is weakly connected for every non-diagonal orbital $\Delta$, then the action of $G$ on $\Omega$ is primitive.
+
+Let $\mathcal{G}(\Delta)$ be weakly connected for every non-diagonal orbital. Suppose that the action is not primitive and there exists a non-trivial block $B \subsetneq \Omega$. Let $\alpha \neq \beta \in B$ and consider the orbital $\Delta$ of $(\alpha,\beta)$. As $B$ is a block, there is no edge $(\alpha^g,\beta^g)$ in $\mathcal{G}(\Delta)$ with $\alpha^g \in B$ and $\beta^g \notin B$ or $\alpha^g \notin B$ and $\beta^g \in B$. This means that there is no edge between $B$ and $\Omega \setminus B$ in $\mathcal{G}(\Delta)$. Thus, $\mathcal{G}(\Delta)$ is not connected since $B \subsetneq \Omega$, which is a contradiction.
