@@ -1,3 +1,44 @@
 % !TeX root = root.tex
 % !TeX spellcheck = en_US
 \section{Classification of transitive actions}
+\subsection*{a)}
+Let $G$ be a group acting transitively on $\Omega$. For $\alpha \in \Omega$ let
+\[ G \rightarrow \text{Sym}(G/G_\alpha), g \mapsto (G/G_\alpha \rightarrow G/G_\alpha, G_\alpha g^\prime \mapsto G_\alpha (g^\prime g)) \]
+be the action of $G$ on the cosets of $G_\alpha$ from the right.
+
+To show that the two actions are permutationally equivalent, we give a bijection $f$ from $\Omega$ to $G/G_\alpha$ s.t. for all $g \in G$ and $\beta \in \Omega$ we have that $f(\beta^g) = f(\beta)^g$.
+
+Let $f : \Omega \rightarrow G/G_\alpha, \beta \mapsto G_\alpha g$ where $\alpha^g = \beta$. First we show that $f$ is well-defined. As G acts transitively on $\Omega$, we always find a $g \in G$ with $\alpha^g = \beta$. Let $\beta \in \Omega$ and $g, g\prime \in G$ s.t. $\alpha^g = \alpha^{g^\prime} = \beta$. Let $h \in G_\alpha$. Then, we have
+\[ h g = h g (g^\prime)^{-1} g^\prime \in G_\alpha g^\prime \]
+since $g (g^\prime)^{-1} \in G_\alpha$ as $\alpha^{g (g^\prime)^{-1}} = \beta^{(g^\prime)^{-1}} = \alpha^{g^\prime (g^\prime)^{-1}} = \alpha$. Thus, we have that $G_\alpha g \subseteq G_\alpha g^\prime$. Similarly, it holds that $G_\alpha g^\prime \subseteq G_\alpha g$.
+
+To show that $f$ is injective, let $\beta, \beta^\prime \in \Omega$ with $\alpha^g = \beta$ and $\alpha^{g^\prime} = \beta^\prime$ for $g, g^\prime \in G$. Then, if $G_\alpha g = G_\alpha g^\prime$, there exist $h, h^\prime \in G_\alpha$ s.t. $h g = h^\prime g^\prime$. Thus, we have
+\[ \beta = \alpha^g = \alpha^{h g} = \alpha^{h^\prime g^\prime} = \alpha^{g^\prime} = \beta^\prime. \]
+
+Surjectivity of $f$ follows from the fact that if $G_\alpha g \in G/G_\alpha$, then $f(\alpha^g) = G_\alpha g$.
+
+It remains to show that for all $g \in G$ and $\beta \in \Omega$ it holds that $f(\beta^g) = f(\beta)^g$. Let $g \in G$ and $\beta \in \Omega$. Then we have
+\[ f(\beta)^g = (G_\alpha g^\prime)^g = G_\alpha g^\prime g = f(\beta^g) \]
+where $\alpha^{g^\prime} = \beta$ and therefore $\alpha^{g^\prime g} = \beta^g$.
+
+\subsection*{b)}
+Let $U, W \leq G$ be subgroups. We show that the actions of $G$ on the cosets of $U$ and $W$ are permutationally equivalent if and only if $U$ and $W$ are conjugate.
+
+``$\Rightarrow$'': Let $f : G/U \rightarrow G/W$ be a bijection s.t. for all $g \in G$ and $U h \in G/U$ it holds that $f((U h)^g) = f(U h)^g$. Let $f(U) = W g$ for some $g \in G$. Then, for all $u \in U$ we have
+\[ Wg = f(U) = f(Uu) = f(U)u = Wgu. \]
+Hence, $gug^{-1} \in W$ for all $u \in U$ and therefore $gUg^{-1} \subseteq W$, which implies that $U \subseteq g^{-1}Wg$.
+Conversely, we have $f(Ug^{-1}) = f(U)g^{-1} = Wgg^{-1} = W$. This implies that for all $w \in W$
+\[ f(Ug^{-1}) = W = Ww = f(Ug^{-1})w = f(Ug^{-1}w). \]
+Since $f$ is injective it follows that $Ug^{-1} = Ug^{-1}w$ for all $w \in W$ and therefore we have $U = Ug^{-1}wg$. Thus, $g^{-1}wg \in U$ for all $w \in W$ which implies that $g^{-1}Wg \subseteq U$.
+
+``$\Leftarrow$'': Let $g \in G$ s.t. $U = g^{-1}Wg$. We define the mapping $f : G/U \rightarrow G/W, Uh \mapsto Wgh$. To show that $f$ is well-defined, let $h, h^\prime \in G$ s.t. $Uh = Uh^\prime$. Then, we have
+\[ g^{-1}Wgh = Uh = Uh^\prime = g^{-1}Wgh^\prime. \]
+This implies that
+\[ f(Uh) = Wgh = Wgh^\prime = f(Uh^\prime). \]
+
+Next, we show that $f$ is injective. Let $Uh, Uh^\prime \in G/U$ s.t. $Wgh = Wgh^\prime$. Then, we have that $g^{-1}Wgh = g^{-1}Wgh^\prime$ and therefore $Uh = Uh^\prime$.
+
+Surjectivity of $f$ follows from the fact that for $Wh \in G/W$ we have that $f(Ug^{-1}h) = Wgg^{-1}h = Wh$.
+
+Lastly, we show that for all $g^\prime \in G$ and $Uh \in G/U$ it holds that $f(Uh^g) = f(Uh)^g$. Let $g^\prime \in G$ and $Uh \in G/U$. Then,
+\[ f(Uhg^\prime) = Wghg^\prime = f(Uh)g^\prime. \]
