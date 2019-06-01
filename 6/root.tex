@@ -1,0 +1,107 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+% !TEX spellcheck = en_US
+
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc} 
+\usepackage{geometry}
+\geometry{a4paper}
+% \usepackage[german]{babel}
+\usepackage{mathtools}
+\usepackage{amsfonts,amsmath,amssymb,amsthm, amsbsy}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{fit}
+\usepackage{subfigure}
+\tikzstyle{vertex}=[circle,fill=black!25,minimum size=20pt,inner sep=0pt]
+\tikzstyle{selected vertex} = [vertex, fill=red!24]
+\tikzstyle{edge} = [draw,thick,->]
+\tikzstyle{weight} = []
+\usepackage{algorithmic}
+\usepackage{listings}
+
+\usepackage{graphicx}
+\usepackage[parfill]{parskip}
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{stmaryrd}
+\usepackage{mathabx}
+\usepackage[]{algorithm2e}
+\usepackage{pdflscape}
+\usepackage{dsfont}
+
+\usepackage{proof}
+
+\usepackage{pgf}
+\usepackage{tikz}
+\usetikzlibrary{matrix,positioning,automata,arrows,shapes,petri}
+\tikzset{
+place/.style={circle,thick,draw=black,minimum size=10mm},
+transition/.style={rectangle,thick,draw=black,minimum width=3mm,inner ysep=5mm, fill=black}
+}
+
+\usepackage{xcolor}
+\definecolor{secblue}{rgb}{0.18, 0.39, 0.77}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+
+\usepackage{sectsty}
+\allsectionsfont{\normalfont\sffamily\bfseries\color{secblue}}
+
+%%% Aliases
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+
+% Command to declare a column vector. Param 1 is the dimension, then n elements follow
+\newcount\colveccount
+\newcommand*\colvec[1]{
+        \global\colveccount#1
+        \begin{pmatrix}
+        \colvecnext
+}
+\def\colvecnext#1{
+        #1
+        \global\advance\colveccount-1
+        \ifnum\colveccount>0
+                \\
+                \expandafter\colvecnext
+        \else
+                \end{pmatrix}
+        \fi
+}
+
+\def\arraystretch{1.33}
+
+
+\title{Computational Group Theory \\ Exercise Sheet 6}
+\author{
+	Franks, Billy Joe \\
+	\texttt{b\_franks12@cs.uni-kl.de}
+	\and 
+	Bergsträßer, Pascal \\
+	\texttt{p\_bergstra15@cs.uni-kl.de}
+}
+
+\newtheorem{theorem}{Satz}
+
+\begin{document}
+\maketitle
+\input{ex1}
+\clearpage
+\input{ex2}
+\clearpage
+\input{ex3}
+\clearpage
+\input{ex4}
+\clearpage
+\input{ex5}
+\end{document}
