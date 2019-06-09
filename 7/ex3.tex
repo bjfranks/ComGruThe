@@ -1,3 +1,32 @@
 % !TeX root = root.tex
 % !TeX spellcheck = en_US
 \section{Centralizers}
+\subsection*{a)}
+Let $G \leq \text{Sym}(\Omega)$ be semiregular. We show that $C_{\text{Sym}(\Omega)}(G)$ is transitive.
+
+First we show that $C_{\text{Sym}(\Omega)}(G)$ acts transitively on every orbit. Let $\alpha \in \Omega$ be arbitrary and $\beta \in \alpha^G$ be an element in the orbit of $\alpha$. We define $c \in \text{Sym}(\Omega)$ s.t. $\alpha^c = \beta$ as follows:
+\[ \gamma^c := 
+	\begin{cases} 
+      \beta^g &, \gamma = \alpha^g \text{ for some } g \in G \\
+      \gamma &, \gamma \in \Omega \setminus \alpha^G \\
+   \end{cases} \]
+To show that $c$ is well-defined, let $g, g^\prime \in G$ s.t. $\alpha^g = \gamma = \alpha^{g^\prime}$. Then, $g (g^\prime)^{-1} \in G_\alpha$ which implies that $g (g^\prime)^{-1} = e$ since $G$ is semiregular. Hence, $g = g^\prime$ and therefore $\beta^g = \beta^{g^\prime}$.
+
+The function $c$ is bijective, since if $\beta^g = \beta^{g^\prime}$ then $g (g^\prime)^{-1} \in G_\beta$. So, $g = g^\prime$ and $\beta^g = \beta^{g^\prime}$. Thus, $c$ maps injectively from $\Omega$ to $\Omega$ which means that $c$ is bijective.
+
+Next, we show that $c \in C_{\text{Sym}(\Omega)}(G)$. Let $h \in G$ and $\gamma \in \Omega$ be arbitrary. If $\gamma \in \alpha^G$ then there exists $g \in G$ s.t. $\alpha^g = \gamma$. It follows that
+\[ \gamma^{hc} = \alpha^{ghc} = \beta^{gh} = \gamma^{ch}. \]
+If $\gamma \in \Omega \setminus \alpha^G$, then
+\[ \gamma^{hc} = \gamma^h = \gamma^{ch} \]
+since $\gamma^h \in \Omega \setminus \alpha^G$.
+
+Moreover, it holds that $\alpha^c = (\alpha^e)^c = \beta^e = \beta$.
+
+By Lemma 3.12.10, the orbits of $G$ are pairwise equivalent since $\text{fix}(G_\alpha) = \Omega$ for all $\alpha \in \Omega$. Thus, by Lemma 3.12.8 for every two orbits there exists $c \in C_{\text{Sym}(\Omega)}(G)$ that maps one orbit to the other. So, for arbitrary $\alpha, \beta \in \Omega$ we use $c_1 \in C_{\text{Sym}(\Omega)}(G)$ that maps $\alpha^G$ to $\beta^G$ and $c_2 \in C_{\text{Sym}(\Omega)}(G)$ to map $\alpha^{c_1}$ to $\beta$ in the same orbit. Hence, $\alpha^{c_1 c_2} = \beta$ with $c_1 c_2 \in C_{\text{Sym}(\Omega)}(G)$. This means that $C_{\text{Sym}(\Omega)}(G)$ is transitive.
+
+\subsection*{b)}
+Let $H,G \leq \text{Sym}(\Omega)$ s.t. $G$ normalizes $H$. To show that $G$ normalizes $C_{\text{Sym}(\Omega)}(H)$, let $c \in C_{\text{Sym}(\Omega)}(H)$, $g \in G$ and $h \in H$ be arbitrary. Then,
+\[ (g^{-1}cg)^{-1}h(g^{-1}cg) = g^{-1}c^{-1}(ghg^{-1})cg = g^{-1}ghg^{-1}g = h \]
+since $ghg^{-1} \in H$ as $G$ normalizes $H$. This means that $g^{-1}cg \in C_{\text{Sym}(\Omega)}(H)$. Thus, $G$ normalizes $C_{\text{Sym}(\Omega)}(H)$.
+
+\subsection*{c)}
