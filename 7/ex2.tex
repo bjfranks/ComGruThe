@@ -1,3 +1,11 @@
 % !TeX root = root.tex
 % !TeX spellcheck = en_US
 \section{Isomorphism of groups by multiplication table reduces to graph isomorphism}
+
+We construct the Cayleigh graph. In the Cayleigh graph and edge $e$ connects $u$ and $v$, $e=(u,v)$, if $u+x=v$ for some $x$, which is the label of the edge $l(e)=x$. We build a slightly different graph in which we replace $e$ with a node $e'$ and connect $u$, $v$ and $x$ with this node $e'$ via directed edges, i.e. $(u,e'),(e',v),(x,e'),(e',x)$. 
+
+With this construction from $e'$ we know which operation it resembles, because each connected element is connected in a unique way. If we use this construction on two groups and the constructed graphs are isomorphic $\phi$, then from the connected nodes $u$, $v$ and $x$ we know $\phi(e')$ is connected to $\phi(u)$, $\phi(v)$ and $\phi(x)$ in a unique way, from the construction we know $\phi(u)+\phi(x)=\phi(v)$, which is exactly an isomorphism between the two groups, if we ignore the added nodes $e'$.
+
+If the two groups are isomorphic $\psi$, then we know $u+x=v \rightarrow \psi(u)+\psi(x)=\psi(v)$. Due to our construction we know there is an $e'$, which represents $u+x=v$ and there also must be an $e''$ which represents $\psi(u)+\psi(x)=\psi(v)$. Thus we simply extend $\psi$, by $\psi(e')=e''$, this is an isomorphism, from the fact that $\psi$ was an isomorphism before.
+
+Let $n$ be the size of the groups, if they are not of equal size they are not isomorphic (and the constructions will not have the same amount of nodes thus not being isomorphic), the graph will have $n+n^2$ nodes and $4 n^2$ edges, we can easily construct this graph from the multiplication matrix in polynomial time or $\mathcal{O}(n^2)$.
