@@ -1,3 +1,25 @@
 % !TeX root = root.tex
 % !TeX spellcheck = en_US
 \section{Decision problem vs generating set computation}
+
+\subsection{The Extended Set Transporter problem polynomially reduces to the Set Transporter problem.}
+
+Obviously the Set Transporter problem can be solved using the Extended Set Transporter Problem we simply ignore the $\alpha$ and $\beta$.
+
+Now for the other direction we inductively reduce the Extended Set Transporter Problem to itself, but reduce the number of $\alpha$ and $\beta$ in each step.
+
+Given a group $G$, $\Delta$, $\Delta'$, $\alpha_1,\dots,\alpha_t$ and $\beta_1, \dots, \beta_t$. We consider $\alpha_t$ and $\beta_t$, we check whether there is an element $g \in G$, with $\alpha^g=\beta$, using Schreier-Sims. We now calculate $G_{\alpha}$ using Schreier-Sims and use the Extended Set Transporter Problem with $G_{\alpha}$, $\Delta$, $\Delta'^{g^{-1}}$, $\alpha_1,\dots,\alpha_{t-1}$ and $\beta_1^{g^{-1}}, \dots, \beta_{t-1}^{g^{-1}}$.
+
+If we assume we find an $h \in G_{\alpha}$ with the requirements, then $hg$ is an element with the before requirement $\Delta^{hg}=(\Delta^h)^g=(\Delta'^{g^{-1}})^g=\Delta'$, the same for all the $\alpha$. The other direction can be argued similarly.
+
+\subsection{The Set Stabilizer problem polynomially reduces to the Extended Set Transporter problem}
+
+Given $G$ and $\Delta$, we wish to find $G_{(\Delta)}$. Using the Extended Set Transporter problem we can find the orbits of elements in $G_{(\Delta)}$, by checking whether $\exists g \in G$ with $(\Delta/\{\alpha\})^g=(\Delta/\{\beta\})$ and $\alpha^g=\beta$. If we repeat this for all $\alpha$ and $\beta$ we get the orbits in $\mathcal{O}(n^2)$. Now we can also get the corresponding transversals by reapplying the Extended Set Transporter problem, this can be done in conjunction with finding orbits in $\mathcal{O}(n^4)$. Using these methods we can effectively apply the Schreier-Sims algorithm. Which then gives us the required $G_{(\Delta)}$
+
+\subsection{The Set Transporter problem polynomially reduces to the Set Stabilizer problem}
+
+Given $G$, $\Delta$ and $\Delta'$. We consider the domain $\Omega$ and union it with a copy of itself $\Omega \cup \Omega'$, we construct the group $H$ which represents $G$, by remapping elements. If $g \in G$ and $\alpha^g=\beta$, then $h \in H$ with $(\Omega \ni \alpha)^h=\beta' \in Omega'$ and $(\Omega' \ni \beta')^h=\alpha \in \Omega$. Effectively $h$ represents $g$, when mapping from $\Omega$ to $\Omega'$ and represent $g^{-1}$, when mapping from $\Omega'$ to $\Omega$. Now in this group $H$ every element is its own inverse, if we want $gg' \in G$, this can be represented by $h h' i$, if $h$ represents $g$, $h'$ represents $g'^{-1}$ and $i$ represents $e$. $\alpha^{gg'}=\beta^{g'}=\gamma$, $\gamma^{g'^{-1}}=\beta$ and $\alpha^{hh'i}=\beta'^{h'i}=\gamma^{i}=\gamma'$. From this we can see, if $G=<g_1,\dots,g_n>$, and if $\phi$ is the above mentioned representation, then $H=<\phi(g_1),\dots,\phi(g_n),\phi(g_1^{-1}),\dots,\phi(g_n^{-1})>$.
+
+Now we just consider $H_{\Delta\cup\phi'(\Delta')}$, where $\Delta \in \Omega$ and $\phi'(\Delta') \in \Omega'$ represents $\Delta'$. In this group we check if there is any other element than the identity, if yes this element represents a $g$ for the Set Transporter problem.
+
+
